@@ -1,63 +1,170 @@
-/* Basic styling */
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Define CSS variables for light/dark theme */
-:root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-}
-
-.dark-theme {
-    --bg-color: #333333;
-    --text-color: #ffffff;
-}
-
-#app {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: var(--bg-color);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.search-bar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
     margin-bottom: 20px;
 }
 
-#city-input {
+.search {
+    margin-bottom: 20px;
+}
+
+#cityInput {
     width: 70%;
     padding: 10px;
-    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
 }
 
-#search-btn {
-    padding: 10px 20px;
-    font-size: 16px;
+#searchBtn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#weather-info {
-    text-align: center;
+#searchBtn:hover {
+    background-color: #0056b3;
+}
+
+.weather-info {
+    display: none;
     margin-bottom: 20px;
 }
 
-.toggles {
-    display: flex;
-    justify-content: space-around;
+#loading {
+    display: none;
+    margin-bottom: 20px;
 }
 
-button {
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
+#loadingImage {
+    width: 100%;
+    max-width: 300px;
+    max-height: 205px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
+
+#toggleUnit {
+    padding: 10px 15px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#toggleUnit:hover {
+    background-color: #218838;
+}
+
+#themeToggleBtn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#themeToggleBtn.light {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#themeToggleBtn.dark {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+/* Light Theme */
+.light-theme {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.light-theme .container {
+    background-color: white;
+}
+
+.light-theme #cityInput {
+    background-color: white;
+    color: #333;
+    border-color: #ddd;
+}
+
+/* Dark Theme */
+.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-theme .container {
+    background-color: #1e1e1e;
+}
+
+.dark-theme #cityInput {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+.dark-theme #searchBtn {
+    background-color: #555;
+}
+
+.dark-theme #searchBtn:hover {
+    background-color: #444;
+}
+
+.dark-theme #toggleUnit {
+    background-color: #555;
+}
+
+.dark-theme #toggleUnit:hover {
+    background-color: #444;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    #cityInput {
+        width: 65%;
+    }
+
+    #searchBtn, #toggleUnit {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+

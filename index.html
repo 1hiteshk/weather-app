@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div id="app">
-        <!-- Search Input -->
-        <div class="search-bar">
-            <input type="text" id="city-input" placeholder="Enter city name">
-            <button id="search-btn">Search</button>
-        </div>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="light-theme">
+    <div class="container">
+      <h1>Weather Dashboard</h1>
+      <button id="themeToggleBtn">Switch to Dark Mode</button>
+      <div class="search">
+        <!-- Input with datalist for city suggestions -->
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Enter city name"
+          list="citySuggestions"
+        />
+        <button id="searchBtn">Search</button>
 
-        <!-- Weather Info Display -->
-        <div id="weather-info">
-            <h2 id="city-name">City Name</h2>
-            <p id="weather-description">Weather description</p>
-            <p id="temperature">Temperature: <span id="temp-value"></span>°<span id="temp-unit">C</span></p>
-            <p id="humidity">Humidity: <span id="humidity-value"></span>%</p>
-            <p id="wind-speed">Wind Speed: <span id="wind-value"></span> m/s</p>
-        </div>
-
-        <!-- Toggle Buttons -->
-        <div class="toggles">
-            <button id="toggle-temp">Toggle °C/°F</button>
-            <button id="toggle-theme">Toggle Light/Dark</button>
-        </div>
+        <!-- Datalist providing autocomplete suggestions -->
+        <datalist id="citySuggestions">
+          <option value="Jaipur"></option>
+          <option value="Delhi"></option>
+          <option value="Bangalore"></option>
+        </datalist>
+      </div>
+      <div id="loading" class="loading">
+        <img src="./assets/loading.webp" alt="Loading..." id="loadingImage" />
+      </div>
+      <div class="weather-info" id="weatherInfo">
+        <!-- Weather data will be inserted here -->
+      </div>
+      <button id="toggleUnit">Switch to °F</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
